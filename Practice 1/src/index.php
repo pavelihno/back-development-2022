@@ -9,11 +9,16 @@
     <tr><th>Id</th><th>Name</th><th>Surname</th></tr>
 
 <?php
-$mysqli = new mysqli("db", "root", "12345678", "appDB");
-$result = $mysqli->query("SELECT * FROM users");
 
-foreach ($result as $row){
-    echo "<tr><td>{$row['ID']}</td><td>{$row['name']}</td><td>{$row['surname']}</td></tr>";
+try {
+    $sql_connection = mysqli_connect("db", "root", "12345678", "appDB");
+    $result = $sql_connection->query("SELECT * FROM users");
+    foreach ($result as $row){
+        echo "<tr><td>{$row['ID']}</td><td>{$row['name']}</td><td>{$row['surname']}</td></tr>";
+    }
+}
+catch (mysqli_sql_exception $e) {
+    print("Ошибка подключения к БД");
 }
 
 ?>
