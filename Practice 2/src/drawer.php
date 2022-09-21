@@ -4,11 +4,11 @@
 
     $input_number = $_GET['num'] ?? 0;
     
-    $size_num = $input_number & 3;          // нулевой бит
+    $size_num = $input_number & 3;          // 0-1 бит
 
-    $color_num = ($input_number >> 2) & 3;  // первый бит
+    $color_num = ($input_number >> 2) & 3;  // 2-3 бит
     
-    $shape_num = ($input_number >> 4) & 3;  // второй бит  
+    $shape_num = ($input_number >> 4) & 3;  // 4-5 бит  
 
     $img_width = 800;
     $img_height = 600;

@@ -6,16 +6,14 @@
 </head>
 <body>
 
-<div style="float: right;">
-    <form method="post">
-        <button type="submit" name="clear_button">Очистить</button>
-    </form>
-</div>
 <h1>Командная строка</h1>
 <div class="form-block">
     <form method="post">
         <input type="text" name="command" required>
         <button type="submit" name="command_button">Отправить</button>
+    </form>
+    <form method="post">
+        <button type="submit" name="clear_button">Очистить</button>
     </form>
 </div>
 <div class="commands-block">
