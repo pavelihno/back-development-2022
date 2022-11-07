@@ -1,0 +1,9 @@
+:root {
+    --main-bg-color: #292e3a;
+    --main-color: #9ba0ad;
+}
+.body, .form-select {
+    background-color: var(--main-bg-color);
+    color: var(--main-color);
+}
+    
