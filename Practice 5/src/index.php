@@ -12,10 +12,10 @@
     <h1 class="display-3">Cafe Pushkin</h1>
     
     <h5 class="display-4">Menu</h5>
-    <a  class="text-muted large-font" href="./desserts.php">Desserts</a>
+    <a class="text-muted large-font" href="./desserts.php">Desserts</a>
     <a class="text-muted large-font" href="./drinks.php">Drinks</a>
 
     <h5 class="display-4">Other</h5>
-    <a class="text-muted large-font" href="./about.html">About us</a>
+    <a class="text-muted large-font" href="./about.php">About us</a>
 </body>
 </html>
