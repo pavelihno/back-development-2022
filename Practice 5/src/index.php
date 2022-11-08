@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('locale_preferences.php');
+require('preferences/locale.php');
 ?>
 
 <html lang="en">
@@ -9,7 +9,7 @@ require('locale_preferences.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
-    <?php require 'theme_preferences.php' ?>
+    <?php require('preferences/theme.php'); ?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title><?php echo $langArray['cafe']?></title>
 </head>
@@ -39,6 +39,15 @@ require('locale_preferences.php');
         <option value="css/light_theme.css"><?php echo $langArray['light'] ?></option>
         <option value="css/dark_theme.css"><?php echo $langArray['dark'] ?></option>
     </select>
+
+    <hr>
+
+    <div class="form-block">
+        <form>
+
+        </form>
+    </div>
+
 </body>
 <script type="text/javascript" src="js/preferences.js"></script>
 </html>

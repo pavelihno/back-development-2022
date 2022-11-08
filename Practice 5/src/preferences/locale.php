@@ -8,5 +8,5 @@
         $_COOKIE['username'] = $_SERVER['PHP_AUTH_USER'];
     }
 
-    include('locale/' . $lang . '.php');
+    include(dirname(__DIR__, 1) . '/locale/' . $lang . '.php');
 ?>

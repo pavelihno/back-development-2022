@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('locale_preferences.php');
+require('preferences/locale.php');
 ?>
 
 <html lang="en">
@@ -9,7 +9,7 @@ require('locale_preferences.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
-    <?php require 'theme_preferences.php' ?>
+    <?php require('preferences/theme.php'); ?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title><?php echo $langArray['about']?></title>
 </head>
