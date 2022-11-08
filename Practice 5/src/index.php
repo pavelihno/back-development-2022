@@ -60,7 +60,7 @@ require('preferences/locale.php');
     <hr>
 
     <div class="form-block"> 
-        <form action="" method="GET">
+        <form action="download.php" method="GET" target="_blank">
             <input class="form-input" type="text" name="downloading_file" required></div>
             <button class="btn" type="submit"><?php echo $langArray['receive'] ?></button>  
         </form>

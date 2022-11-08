@@ -2,7 +2,7 @@
 $target_dir = dirname(__DIR__, 2) . '/storage/pdf/';
 $target_file_name = $target_dir . basename($_FILES['uploading_file']['name']);
 $file_type = strtolower(pathinfo($target_file_name, PATHINFO_EXTENSION));
-$error_flag = 0;
+$error_flag = false;
 $error_message_array = [];
 
 if (file_exists($target_file_name)) {
