@@ -19,6 +19,8 @@
         "description" => "Quite cafe in the center of Moscow",
         "address" => "Address",
         "phone" => "Phone",
-        "homepage" => "Back to homepage"
+        "homepage" => "Back to homepage",
+        "send" => "Send",
+        "receive" => "Receive"
     );
 ?>

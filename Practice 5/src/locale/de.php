@@ -19,6 +19,8 @@
         "description" => "Ruhiges Café im Zentrum von Moskau",
         "address" => "Adresse",
         "phone" => "Telefon",
-        "homepage" => "Zurück zur Startseite"
+        "homepage" => "Zurück zur Startseite",
+        "send" => "Senden",
+        "receive" => "Erhalten"
     );
 ?>

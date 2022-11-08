@@ -43,8 +43,26 @@ require('preferences/locale.php');
     <hr>
 
     <div class="form-block">
-        <form>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <input class="form-input" type="file" name="uploading_file" required>
+            <button class="btn" type="submit"><?php echo $langArray['send'] ?></button>
+        </form>
+        
+        <div class="response-block">
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                include("uploader/upload.php");
+            }
+            ?>
+        </div>
+    </div>
 
+    <hr>
+
+    <div class="form-block"> 
+        <form action="" method="GET">
+            <input class="form-input" type="text" name="downloading_file" required></div>
+            <button class="btn" type="submit"><?php echo $langArray['receive'] ?></button>  
         </form>
     </div>
 

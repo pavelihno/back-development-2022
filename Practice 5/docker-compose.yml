@@ -24,6 +24,7 @@ services:
         - ./src:/var/www/html
         - ./config/apache.conf:/etc/apache2/sites-enabled/000-default.conf
         - ./config/php.ini:/usr/local/etc/php/conf.d/php.ini
+        - ./storage:/var/www/storage
     nginx:
         image: nginx
         ports: 
