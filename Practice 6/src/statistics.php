@@ -34,11 +34,11 @@ function get_graph_data() {
     $graph_loader = $loader->loadData([
         Statistic::class => [
             'graph{1..50}' => [
-                'stat_1' => '<numberBetween(1, 110)>',
-                'stat_2' => '<numberBetween(2, 120)>',
-                'stat_3' => '<numberBetween(3, 130)>',
-                'stat_4' => '<numberBetween(4, 140)>',
-                'stat_5' => '<numberBetween(5, 150)>'
+                'stat_1' => '<numberBetween(100, 900)>',
+                'stat_2' => '<numberBetween(100, 900)>',
+                'stat_3' => '<numberBetween(100, 900)>',
+                'stat_4' => '<numberBetween(100, 900)>',
+                'stat_5' => '<numberBetween(100, 900)>'
             ]
         ]
     ]);
@@ -50,7 +50,7 @@ $graph_data = get_graph_data();
 $plot_type_int = 0;
 
 foreach ($graph_data as $i=>$data) {
-    echo "<div><img src=\"/show_graph.php?plot_type=$plot_type_int&graph_data=$data\"></div>";
+    echo "<div style='margin-bottom: 10px;'><img src=\"/show_graph.php?plot_type=$plot_type_int&graph_data=$data\"></div>";
     $plot_type_int += 1;
     $plot_type_int %= 3;
 }

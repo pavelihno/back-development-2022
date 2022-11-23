@@ -1,22 +1,36 @@
 <?php
 require_once '../vendor/autoload.php';
 
-use Amenadiel\JpGraph\Graph;
+use Amenadiel\JpGraph\Graph\Graph;
 use Amenadiel\JpGraph\Plot\LinePlot;
 use Amenadiel\JpGraph\Plot\BarPlot;
-use Amenadiel\JpGraph\Plot\PiePlot;
+use Amenadiel\JpGraph\Plot\ScatterPlot;
+
+function get_line_plot($data) {
+    return new LinePlot($data);
+}
+
+function get_bar_plot($data) {
+    return new BarPlot($data);
+}
+
+function get_scatter_plot($data) {
+    return new ScatterPlot($data);
+}
 
 
-function set_watemark(GDImage $img): void {
+function set_watermark(GdImage $img): void {
     $watermark = imagecreate(140, 85);
-    imagecolorallocatealpha($watermark, 255, 255, 255, 127);
-    imagestring($stamp, 4, 0, 0, 'Pasha Savinov', imagecolorallocatealpha($stamp, 0, 0, 0, 100));
+    
+    imagecolorallocatealpha($watermark, 250, 250, 255, 125);
+    imagestring($watermark, 5, 0, 0, 'Pasha Savinov', imagecolorallocatealpha($watermark, 0, 0, 0, 100));
+    
     $watermark_width = imagesx($watermark);
     $watermark_height = imagesy($watermark);
+    
     imagecopy(
         $img, $watermark,
-        imagesx($img) - $watermark_width,
-        imagesy($img) - $watermark_height + 60,
+        $watermark_width/2, 0,
         0, 0,
         $watermark_width, $watermark_height
     );
@@ -28,26 +42,23 @@ function set_watemark(GDImage $img): void {
 
 function get_graph(): GdImage {
     if (array_key_exists('plot_type', $_GET)) {
-        $plot_type = $_GET['plot_type'];
+        $plot_type = intval($_GET['plot_type']);
     }
 
     if (array_key_exists('graph_data', $_GET)) {
         $graph_data_str = $_GET['graph_data'];
-        $graph_data_str = 1;
         $graph_data = array_map("intval", explode(",", substr($graph_data_str, 1, -1)));
     }
 
     $plot = match($plot_type) {
-        0 => new LinePlot($graph_data),
-        1 => new BarPlot($graph_data),
-        2 => new PiePlot($graph_data),
-        default => new LinePlot($graph_data)
+        0 => get_line_plot($graph_data),
+        1 => get_bar_plot($graph_data),
+        2 => get_scatter_plot($graph_data),
+        default => get_line_plot($graph_data)
     };
         
-    $graph = new Graph(540, 360);
-        
+    $graph = new Graph(400, 200);
     $graph->SetScale('textint', 100, 1000);
-    $graph->SetBackgroundGradient('lightsteelblue', 'lightblue');
     
     $graph->Add($plot);
     $graph->img->SetImgFormat('png');
@@ -55,6 +66,6 @@ function get_graph(): GdImage {
     return $graph->Stroke(_IMG_HANDLER);
 }
 
-set_watemark(get_graph());
+set_watermark(get_graph());
 
 ?>
