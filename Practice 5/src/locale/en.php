@@ -2,7 +2,7 @@
     global $langArray; 
     
     $langArray= array(
-        "drinks" => "Drinks",
+        "drinks" => "Drink",
         "desserts" => "Desserts",
         "price" => "Price",
         "calories" => "Calories",
