@@ -1,3 +1,3 @@
 <div class="container">
-    <span>ERROR</span>
+    <span>UNEXPECTED ERROR</span>
 </div>

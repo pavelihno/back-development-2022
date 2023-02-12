@@ -1,6 +1,5 @@
-<h4>DRINKS</h4>
 <table class="table table-striped">
-    <tr><th></th><th>Price</th></tr>
+    <tr><th><h4>Drinks</h4></th><th>Price</th></tr>
     <?php
     foreach ($data as $row)
     {
